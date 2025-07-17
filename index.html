@@ -1,0 +1,30 @@
+# short-link-app<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Short Link Redirect</title>
+    <script>
+        // 从 URL 获取短码参数
+        const code = window.location.pathname.substring(1);
+        
+        // 短码映射配置
+        const links = {
+            "google": "https://www.google.com",
+            "github": "https://github.com",
+            "blog": "https://your-blog-url.com"
+            // 更多映射可以在这里添加
+        };
+        
+        // 检查短码是否存在并跳转
+        if (code && links[code]) {
+            window.location.href = links[code];
+        } else {
+            document.write("<h1>Invalid Short Link</h1>");
+            document.write("<p>Please check the link and try again.</p>");
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>
